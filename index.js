@@ -15,8 +15,8 @@ app.get('/', (req, res) => res.json({
 		version: '1.0.0',
 		message: 'A simple proxy server for serving files with CORS enabled',
 		usage: 'https:\/\/\<domain\>\/file?url=\<file-url\>',
-		author: 'Babakolo Usman Suleiman',
-		git: 'https:\//github.com/usmansbk/image-server.git'
+		author: 'Privacy Project',
+		git: 'https:\//github.com/theprivacyproject/Proxy-Server.git'
 	}
 }));
 
