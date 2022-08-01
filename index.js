@@ -7,19 +7,14 @@ express.urlencoded({ extended: true});
 const app = express();
 const PORT = process.env.PORT || 8888;
 
-app.use(cors());
+app.get('/', (req, res) => {
+var http = require('http');
 
-app.get('/', (req, res) => res.json({
-	status: 'online',
-	data: {
-		version: '1.0.0',
-		message: 'A simple proxy server for serving files with CORS enabled',
-		usage: 'https:\/\/\<domain\>\/file?url=\<file-url\>',
-		author: 'Privacy Project',
-		git: 'https:\//github.com/theprivacyproject/Proxy-Server.git'
-	}
-}));
-
+http.createServer(function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end('Hello, world! [logging sample]');
+}).listen(process.env.PORT);
+});
 
 app.get('/file', (req, res) => {
 	request
@@ -28,4 +23,9 @@ app.get('/file', (req, res) => {
 	.pipe(res)
 });
 
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+app.listen(PORT, () => console.log(`   
+DA
+SERVER
+IS
+ONLINE
+`));
